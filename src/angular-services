@@ -1,1 +1,18 @@
 angular services:
+    1.parts of the service :
+         1. class
+         2. service injectable decorator 
+         3. added to providers
+    2. delevering the services to components
+        1. providers will deliver a instance of service to injectors 
+        injectors will maintain the single instance of services.
+        2. constructor injection is used by component to request for service instance
+        3. injector will create the instance and set it in cache will be used for feature request
+        4. adding the modifier to the parameter will auto create the property inside the class
+
+        {
+            providedIn:'root' --> this is actually responsible for ignoring the service in build if it is not used anywhere
+            reduces the bundle 
+        }
+
+Understanding and Configuring the dependency injection

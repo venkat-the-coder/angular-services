@@ -7,6 +7,7 @@ import { AddBookComponent } from './add-book/add-book.component';
 import { EditBookComponent } from './edit-book/edit-book.component';
 import { EditReaderComponent } from './edit-reader/edit-reader.component';
 import { RootRoutingModule } from './app-routing.module';
+import { LoggerService } from './core/logger.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { RootRoutingModule } from './app-routing.module';
     BrowserModule,
     RootRoutingModule
   ],
-  providers: [],
+  providers: [LoggerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
