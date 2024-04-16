@@ -21,7 +21,7 @@ import { LoggerService } from './core/logger.service';
     BrowserModule,
     RootRoutingModule
   ],
-  providers: [LoggerService],
+  providers: [{provide:LoggerService , useClass:LoggerService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

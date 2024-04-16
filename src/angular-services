@@ -16,3 +16,54 @@ angular services:
         }
 
 Understanding and Configuring the dependency injection
+
+1. using DI we are actually loose coupling the objects 
+2. A provider is the main thing in this DI
+
+ A dependency provider configures an injector with a DI token which that injector uses to provide the runtime version of a dependency value. 
+
+ { provide:"token" , useClass:"class name"} ==> also can be provided in this way too
+
+
+
+ Multiple ways to provide services:
+ 1. injectable to root
+ 2. in provider of any module
+ 3. object literal with token in any module 
+
+ we can also implement the other service or interfaces 
+ 
+  3. object literal with token in any module   { provide:"token" , useClass:"class name"}
+     different ways :
+        useclass and useExisting : --> creats instance of class with new key word
+        use value : { provide:"token" , useValue:{ method , method}} ==> need to provide the value (methods) directly
+        UseFactory : ==> {provide:'token' , useFactory:'dataFactoryClass function' , deps:'service deps to be passed'}
+
+
+
+Injectors
+
+1. deliver the provider services wherever been requested via constructor
+2. also maintain a single instane of service provided
+
+
+Hierarchial injectors
+root injector --> lazy loaded module --> component --> child component
+   |
+   --> root injector component
+
+
+   1. we should provide i higher order module in order to get the instance all over the app
+   2. we will face issue if the provider is not in specific order
+   3. we should not provide same service in 2 different components in same hierarchy it will create 2 different instances 
+
+
+
+where to provide services ?
+
+1. provided in rooot
+2. inside the component provider array
+3. provide component specific service to component itself
+
+
+provider error will be faced if it is not provided in particular location
