@@ -8,6 +8,7 @@ import { EditBookComponent } from './edit-book/edit-book.component';
 import { EditReaderComponent } from './edit-reader/edit-reader.component';
 import { RootRoutingModule } from './app-routing.module';
 import { LoggerService } from './core/logger.service';
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoggerService } from './core/logger.service';
   ],
   imports: [
     BrowserModule,
-    RootRoutingModule
+    RootRoutingModule,
+    HttpClientModule
   ],
   providers: [{provide:LoggerService , useClass:LoggerService}],
   bootstrap: [AppComponent]
