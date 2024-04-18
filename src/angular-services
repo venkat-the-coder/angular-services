@@ -103,4 +103,5 @@ Observables
 
   Async/Await
 
+  async/await is used with promises to avoid call back function can be defined like synchronous logic 
   
